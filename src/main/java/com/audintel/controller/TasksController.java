@@ -1,5 +1,5 @@
-package com.audintel.FFM.controller;
-import com.audintel.FFM.dao.Task;
+package com.audintel.controller;
+import com.audintel.dao.Task;
 import com.audintel.FFM.service.TaskService;
 
 import org.springframework.beans.factory.annotation.Autowired;

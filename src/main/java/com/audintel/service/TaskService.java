@@ -1,6 +1,6 @@
-package com.audintel.FFM.service;
-import com.audintel.FFM.dao.Task;
-import com.audintel.FFM.repository.TaskRepository;
+package com.audintel.service;
+import com.audintel.dao.Task;
+import com.audintel.repository.TaskRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

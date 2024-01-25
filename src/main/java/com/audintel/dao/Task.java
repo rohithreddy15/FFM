@@ -1,4 +1,4 @@
-package com.audintel.FFM.dao;
+package com.audintel.dao;
 
 import jakarta.persistence.*;
 import org.hibernate.annotations.CollectionId;

@@ -1,6 +1,6 @@
-package com.audintel.FFM.repository;
+package com.audintel.repository;
 
-import com.audintel.FFM.dao.Task;
+import com.audintel.dao.Task;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
