@@ -55,14 +55,11 @@ public class Employee {
   this.moblieno = moblieno;
  }
 
- public int getMgrig() {
-  return mgrig;
+ public int getMrgid() {
+  return mgrid;
  }
 
- public void setMgrig(int mgrig) {
-  this.mgrig = mgrig;
- }
-
+public void setMgrid(int mgrid){this.mgrid=mgrid;}
  public int getRoleid() {
   return roleid;
  }
@@ -183,7 +180,7 @@ public class Employee {
   this.updated_by = updated_by;
  }
 
- public boolean isIsactive() {
+ public boolean getIsactive() {
   return isactive;
  }
 
@@ -206,7 +203,7 @@ String last_name;
  @Column
  int moblieno;
  @Column
- int mgrig;
+ int mgrid;
  @Column
  int roleid;
 
