@@ -32,7 +32,7 @@ public class Employeeservice {
             existingEmp.setLast_name(updatedemp.getLast_name());
             existingEmp.setDateofjoin(updatedemp.getDateofjoin());
             existingEmp.setDateofbirth(updatedemp.getDateofbirth());
-            existingEmp.setMgrid(updatedemp.getMrgid());
+            existingEmp.setMgrid(updatedemp.getMgrid());
             existingEmp.setRoleid(updatedemp.getRoleid());
             existingEmp.setLoginid(updatedemp.getLoginid());
             existingEmp.setPassword(updatedemp.getPassword());

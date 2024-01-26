@@ -55,7 +55,7 @@ public class Employee {
   this.moblieno = moblieno;
  }
 
- public int getMrgid() {
+ public int getMgrid() {
   return mgrid;
  }
 
