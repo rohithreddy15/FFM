@@ -13,7 +13,7 @@ public class Visit_infocontroller {
     public Visit_info savevisit(@RequestBody Visit_info v){
         return service.savevisit(v);
     }
-    @GetMapping("/visitinfo/{id}")
+    @GetMapping("/visitget/{id}")
     public Visit_info getvisit(@PathVariable int id){
         return service.getvisit(id);
     }
