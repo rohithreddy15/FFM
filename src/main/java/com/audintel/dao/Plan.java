@@ -18,6 +18,8 @@ public class Plan {
     int Created_by;
     @Column
     Date Completed_date;
+    @Column
+    float Distance;
 
     public int getId() {
         return id;
@@ -27,12 +29,13 @@ public class Plan {
         this.id = id;
     }
 
-    public Boolean getStatus() {
-        return Status;
-    }
+
 
     public void setStatus(Boolean status) {
-        Status = status;
+        this.Status = status;
+    }
+    public Boolean getStatus() {
+        return Status;
     }
 
     public Date getCreated_date() {
@@ -40,7 +43,7 @@ public class Plan {
     }
 
     public void setCreated_date(Date created_date) {
-        Created_date = created_date;
+        this.Created_date = created_date;
     }
 
     public int getCreated_by() {
@@ -48,7 +51,7 @@ public class Plan {
     }
 
     public void setCreated_by(int created_by) {
-        Created_by = created_by;
+        this.Created_by = created_by;
     }
 
     public Date getCompleted_date() {
@@ -56,7 +59,7 @@ public class Plan {
     }
 
     public void setCompleted_date(Date completed_date) {
-        Completed_date = completed_date;
+        this.Completed_date = completed_date;
     }
 
     public float getDistance() {
@@ -64,10 +67,11 @@ public class Plan {
     }
 
     public void setDistance(float distance) {
-        Distance = distance;
+        this.Distance = distance;
     }
 
-    @Column
-    float Distance;
+
+
+
 
 }
