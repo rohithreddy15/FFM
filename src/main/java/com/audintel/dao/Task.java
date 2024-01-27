@@ -18,12 +18,19 @@ public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     int id;
+    @Column
     String description ;
+    @Column
     int createdby;
+    @Column
     int assigned_to;
+    @Column
     boolean status;
+    @Column
     int dealerid;
+    @Column
     Date assigned_date;
+    @Column
     Date completed_date;
 
     public int getDealerid() {
@@ -50,10 +57,6 @@ public class Task {
         this.completed_date = completed_date;
     }
 
-
-
-
-
     public String getDescription() {
         return description;
     }
@@ -75,7 +78,7 @@ public class Task {
 
 
 
-    public boolean isStatus() {
+    public boolean getStatus() {
         return status;
     }
 

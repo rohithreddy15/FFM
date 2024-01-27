@@ -1,4 +1,5 @@
 package com.audintel.controller;
+import com.audintel.dao.Employee;
 import com.audintel.dao.Task;
 import com.audintel.service.TaskService;
 
@@ -10,23 +11,25 @@ public class TasksController {
         TaskService service;
 
         @PostMapping("/task")
-        public Task save(@RequestBody Task Task) {
+        public Task save(@RequestBody Task task) {
 
-            return service.savetask(Task);
+            return service.savetask(task);
         }
+    @DeleteMapping("/taskdel/{id}")
+    public void delete (@PathVariable int id){
+        service.deletetask(id);
+    }
+    @GetMapping("taskget/{id}")
+    public Task getTask(@PathVariable Integer id){
 
-//        @GetMapping("/Task")
-//        void find() {
-//            System.out.println(service.getTask(1));
-//
-//        }
-//
-//        @RequestMapping(method = RequestMethod.GET, value = "/Task/id={id}")
-//
-//        @PutMapping("/Task")
-//        public Task update(@RequestBody Task booking) {
-//            return service.updateTask;
-//        }
+        return service.getTask(id);
+    }
+    @PutMapping("taskupdate/{id}")
+    public Task updatetask(@PathVariable int id,@RequestBody Task task ){
+        return service.updateTask(id,task);
+    }
+
+
 
 
     }
