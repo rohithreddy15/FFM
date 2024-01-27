@@ -25,7 +25,7 @@ public class Employeecontroller {
         return empservice.getemployee(empcode);
     }
     @PutMapping("empupdate/{empcode}")
-    public Employee updatetask(@PathVariable int empcode,@RequestBody Employee emp ){
+    public Employee updateemp(@PathVariable int empcode,@RequestBody Employee emp ){
         return empservice.updateemp(empcode,emp);
     }
 }
