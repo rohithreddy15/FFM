@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:3000/")
 public class Visit_infocontroller {
     @Autowired
     Visit_infoservice service;
@@ -13,7 +14,7 @@ public class Visit_infocontroller {
     public Visit_info savevisit(@RequestBody Visit_info v){
         return service.savevisit(v);
     }
-    @GetMapping("/visitinfo/{id}")
+    @GetMapping("/visitget/{id}")
     public Visit_info getvisit(@PathVariable int id){
         return service.getvisit(id);
     }
