@@ -27,7 +27,6 @@ public class Planservice {
         Optional<Plan> b=prepo.findById(id);
         if(b.isPresent()){
             Plan oldplan=b.get();
-            oldplan.setId(updatedplan.getId());
             oldplan.setStatus(updatedplan.getStatus());
             oldplan.setCreated_date(updatedplan.getCreated_date());
             oldplan.setCreated_by(updatedplan.getCreated_by());

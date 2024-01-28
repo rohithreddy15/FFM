@@ -1,14 +1,23 @@
 package com.audintel.dao;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
 
 @Entity
+@Table(name="visit_info")
 public class Visit_info {
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "task_id")
+   private  Task task;
     @Id
     int id;
+    public Task getTask() {
+        return task;
+    }
 
+    public void setTask(Task task) {
+        this.task = task;
+    }
     public int getId() {
         return id;
     }
@@ -65,7 +74,7 @@ public class Visit_info {
         this.to_longitude = to_longitude;
     }
 
-    @Column
+    @Column(insertable = false,updatable = false)
     int task_id;
     @Column
     float distance_travelled;

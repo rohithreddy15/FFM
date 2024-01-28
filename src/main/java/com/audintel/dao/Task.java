@@ -7,6 +7,32 @@ import java.util.Date;
 
 @Entity
 public class Task {
+   @OneToOne(mappedBy = "task", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+   private Visit_info visitInfo;
+    @Id
+    int id;
+    @Column
+    int created_by;
+    @Column
+    int assigned_to;
+    @Column
+    int dealerid;
+    @Column
+    String description;
+    @Column
+    Boolean status;
+    @Column
+    Date assigned_date;
+    @Column
+    Date completed_date;
+    public Visit_info getVisitInfo() {
+        return visitInfo;
+    }
+
+    public void setVisitInfo(Visit_info visitInfo) {
+        this.visitInfo = visitInfo;
+    }
+
     public int getId() {
         return id;
     }
@@ -15,16 +41,21 @@ public class Task {
         this.id = id;
     }
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    int id;
-    String description ;
-    int createdby;
-    int assigned_to;
-    boolean status;
-    int dealerid;
-    Date assigned_date;
-    Date completed_date;
+    public int getCreated_by() {
+        return created_by;
+    }
+
+    public void setCreated_by(int created_by) {
+        this.created_by = created_by;
+    }
+
+    public int getAssigned_to() {
+        return assigned_to;
+    }
+
+    public void setAssigned_to(int assigned_to) {
+        this.assigned_to = assigned_to;
+    }
 
     public int getDealerid() {
         return dealerid;
@@ -32,6 +63,22 @@ public class Task {
 
     public void setDealerid(int dealerid) {
         this.dealerid = dealerid;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Boolean getStatus() {
+        return status;
+    }
+
+    public void setStatus(Boolean status) {
+        this.status = status;
     }
 
     public Date getAssigned_date() {
@@ -49,47 +96,6 @@ public class Task {
     public void setCompleted_date(Date completed_date) {
         this.completed_date = completed_date;
     }
-
-
-
-
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-
-
-    public int getAssigned_to() {
-        return assigned_to;
-    }
-
-    public void setAssigned_to(int assigned_to) {
-        this.assigned_to = assigned_to;
-    }
-
-
-
-
-    public boolean isStatus() {
-        return status;
-    }
-
-    public void setStatus(boolean status) {
-        this.status = status;
-    }
-
-
-
-    public int getCreatedby() {
-        return createdby;
-    }
-
-    public void setCreatedby(int createdby) {
-        this.createdby = createdby;
-    }
 }
+
+

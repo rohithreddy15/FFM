@@ -21,7 +21,6 @@ public class Employeecontroller {
     }
     @GetMapping("empget/{empcode}")
     public Employee getemployee(@PathVariable Integer empcode){
-
         return empservice.getemployee(empcode);
     }
     @PutMapping("empupdate/{empcode}")

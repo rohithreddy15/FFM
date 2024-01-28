@@ -10,23 +10,17 @@ public class TasksController {
         TaskService service;
 
         @PostMapping("/task")
-        public Task save(@RequestBody Task Task) {
+        public Task save(@RequestBody Task task) {
 
-            return service.savetask(Task);
+            return service.savetask(task);
         }
 
-//        @GetMapping("/Task")
-//        void find() {
-//            System.out.println(service.getTask(1));
-//
-//        }
-//
-//        @RequestMapping(method = RequestMethod.GET, value = "/Task/id={id}")
-//
-//        @PutMapping("/Task")
-//        public Task update(@RequestBody Task booking) {
-//            return service.updateTask;
-//        }
+        @GetMapping("/task/{id}")
+        public Task gettask(@PathVariable int id) {
+            return service.gettask(id);
+        }
+
+
 
 
     }

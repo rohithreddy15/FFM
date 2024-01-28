@@ -7,9 +7,6 @@ import jakarta.persistence.Id;
 @Entity
 public class Dealer {
 
-
-
-
     public String getFirst_name() {
         return first_name;
     }

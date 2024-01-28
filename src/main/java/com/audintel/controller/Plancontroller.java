@@ -4,7 +4,7 @@ import com.audintel.dao.Plan;
 import com.audintel.service.Planservice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
+@RestController
 public class Plancontroller {
     @Autowired
     Planservice service;

@@ -11,13 +11,7 @@ public class Plan {
     @Id
     int id;
     @Column
-    Boolean Status;
-    @Column
-    Date Created_date;
-    @Column
-    int Created_by;
-    @Column
-    Date Completed_date;
+    Boolean status;
 
     public int getId() {
         return id;
@@ -28,46 +22,52 @@ public class Plan {
     }
 
     public Boolean getStatus() {
-        return Status;
+        return status;
     }
 
     public void setStatus(Boolean status) {
-        Status = status;
+        this.status = status;
     }
 
     public Date getCreated_date() {
-        return Created_date;
+        return created_date;
     }
 
     public void setCreated_date(Date created_date) {
-        Created_date = created_date;
+        this.created_date = created_date;
     }
 
     public int getCreated_by() {
-        return Created_by;
+        return created_by;
     }
 
     public void setCreated_by(int created_by) {
-        Created_by = created_by;
+        this.created_by = created_by;
     }
 
     public Date getCompleted_date() {
-        return Completed_date;
+        return completed_date;
     }
 
     public void setCompleted_date(Date completed_date) {
-        Completed_date = completed_date;
+        this.completed_date = completed_date;
     }
 
     public float getDistance() {
-        return Distance;
+        return distance;
     }
 
     public void setDistance(float distance) {
-        Distance = distance;
+        this.distance = distance;
     }
 
     @Column
-    float Distance;
+    Date created_date;
+    @Column
+    int created_by;
+    @Column
+    Date completed_date;
+    @Column
+    float distance;
 
 }
