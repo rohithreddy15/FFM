@@ -86,8 +86,17 @@ public class Dealer {
     public void setStateid(int stateid) {
         this.stateid = stateid;
     }
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
     @Id
     int id;
+
+
     @Column
     String first_name;
     @Column
