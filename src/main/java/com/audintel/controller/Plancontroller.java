@@ -20,7 +20,7 @@ public class Plancontroller {
     public void deleteplan(@PathVariable int id){
         service.deleteplan(id);
     }
-    @PutMapping("/plan/{id}")
+    @PutMapping("/updateplan/{id}")
     public Plan updateplan(@PathVariable int id,@RequestBody Plan p){
         return service.updateplan(id,p);
     }
