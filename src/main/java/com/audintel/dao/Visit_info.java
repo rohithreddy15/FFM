@@ -28,11 +28,11 @@ public class Visit_info {
 
 
 
-    public float getDistance_travelled() {
+    public float getDistancetravelled() {
         return distancetravelled;
     }
 
-    public void setDistance_travelled(float distance_travelled) {
+    public void setDistancetravelled(float distancetravelled) {
         this.distancetravelled = distancetravelled;
     }
 

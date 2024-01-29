@@ -30,7 +30,7 @@ public class Visit_infoservice {
             oldvisit.setId(updatedvisit.getId());
             oldvisit.setFrom_latitude(updatedvisit.getFrom_latitude());
             oldvisit.setFrom_longitude(updatedvisit.getFrom_longitude());
-            oldvisit.setDistance_travelled(updatedvisit.getDistance_travelled());
+            oldvisit.setDistancetravelled(updatedvisit.getDistancetravelled());
             oldvisit.setTo_latitude(updatedvisit.getTo_latitude());
             oldvisit.setTo_longitude(updatedvisit.getTo_longitude());
             return vrepo.save(oldvisit);
