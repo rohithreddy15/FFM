@@ -30,12 +30,7 @@ public class Plancontroller {
         return service.updateplan(id,p);
     }
     @GetMapping("/allplans")
-    public List<Integer> getallplans(){
-        List<Plan> al=service.getallplans();
-        List<Integer>as=new ArrayList<>();
-        for(Plan a:al){
-            as.add(a.getId());
-        }
-        return as;
+    public List<Plan> getallplans(){
+        return service.getallplans();
     }
 }
