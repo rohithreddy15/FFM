@@ -33,9 +33,12 @@ public class FfmApplication {
 //@RestController
 //@RequestMapping("/")
 //class DistanceController {
+//
 //	@Autowired
-//    TaskRepository taskRepository;
+//	TaskRepository taskRepository;
+//	@Autowired
 //	Visit_inforepository visitInfoRepository;
+//
 //
 //	public DistanceController(TaskRepository taskRepository, Visit_inforepository visitInfoRepository) {
 //		this.taskRepository = taskRepository;
@@ -44,11 +47,11 @@ public class FfmApplication {
 //
 //	@GetMapping("/distance/{employeeId}")
 //	public float calculateDistanceForEmployee(@PathVariable int employeeId) {
-//		List<Task> tasks = taskRepository.findByEmployeeId( employeeId);
+//		List<Task> tasks = taskRepository.findByAssigned_to( employeeId);
 //		float totalDistance = 0;
 //
 //		for (Task task : tasks) {
-//			List<Visit_info> visitInfos = visitInfoRepository.findByTaskId(task.getId());
+//			List<Visit_info> visitInfos = visitInfoRepository.findByTask_Id(task.getId());
 //
 //			for (int i = 0; i < visitInfos.size() - 1; i++) {
 //				Visit_info visitInfo = visitInfos.get(i);

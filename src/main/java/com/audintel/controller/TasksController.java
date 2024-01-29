@@ -4,6 +4,9 @@ import com.audintel.service.TaskService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
 @RestController
 public class TasksController {
         @Autowired
@@ -29,4 +32,9 @@ public class TasksController {
         }
 
 
-    }
+        @GetMapping("/distance/{empid}")
+        float fun(@PathVariable int empid ){
+
+            return service.fun(empid);
+        }
+}

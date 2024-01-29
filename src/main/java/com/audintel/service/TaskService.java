@@ -7,6 +7,7 @@ import com.audintel.repository.TaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
@@ -14,6 +15,8 @@ import java.util.Optional;
 public class TaskService {
     @Autowired
     TaskRepository repo;
+    @Autowired
+    Visit_infoservice service;
 
     public Task savetask(Task b){
         return  repo.save(b);
@@ -40,33 +43,20 @@ public class TaskService {
         Optional<Task> b= repo.findById(id);
         return b.orElse(null);
     }
-    public void deletetask(int id){
-        repo.deleteById(id);
+
+
+
+   public float fun(int empid){
+      List<Task> ob=repo.findByAssigned_to(empid);
+       // Task ob=repo.findByAssigned_to(empid);
+      float ans=0;
+      for(Task t:ob){
+          ans+=service.distance(t.getId());
+      }
+
+       System.out.println("entered");
+return ans;
+
     }
-//    public float totaldistance(int empid){
-//        List<Task> tasks=repo.findCreated_by(empid);
-//        float td=0.0f;
-//        for(Task t:tasks){
-//            if(t.getStatus()!=null && t.getCompleted_date()!=null){
-//                td+=calculatedistance(t.getVisitInfo().getFrom_latitude(),t.getVisitInfo().getFrom_longitude(),t.getVisitInfo().getTo_latitude(),t.getVisitInfo().getTo_longitude());
-//            }
-//        }
-//        System.out.println(td);
-//        return td;
-//    }
-//
-//    public float calculatedistance(float fromlatitude,float fromlongitude,float tolatitude,float tolongitude){
-//        int earthRadius = 6371;
-//
-//        float dLat = (float) Math.toRadians(tolatitude - fromlatitude);
-//        float dLon = (float) Math.toRadians(tolongitude - fromlongitude);
-//
-//        float a = (float) (Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-//                Math.cos(Math.toRadians(fromlatitude)) * Math.cos(Math.toRadians(tolatitude)) *
-//                        Math.sin(dLon / 2) * Math.sin(dLon / 2));
-//
-//        float c = 2 * (float) Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-//
-//        return earthRadius * c;
-//    }
+
 }

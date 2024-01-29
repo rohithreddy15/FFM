@@ -7,9 +7,17 @@ import jakarta.persistence.*;
 @Table(name="visit_info")
 public class Visit_info {
 
+    @Column(name = "task_id")
+   private  int taskid;
     @Id
     int id;
+    public int getTaskId() {
+        return taskid;
+    }
 
+    public void setTaskId(int taskid) {
+        this.taskid = taskid;
+    }
     public int getId() {
         return id;
     }
@@ -18,13 +26,7 @@ public class Visit_info {
         this.id = id;
     }
 
-    public int getTask_id() {
-        return task_id;
-    }
 
-    public void setTask_id(int task_id) {
-        this.task_id = task_id;
-    }
 
     public float getDistance_travelled() {
         return distance_travelled;
@@ -66,8 +68,7 @@ public class Visit_info {
         this.to_longitude = to_longitude;
     }
 
-    @Column(insertable = false,updatable = false)
-    int task_id;
+
     @Column
     float distance_travelled;
     @Column
