@@ -39,4 +39,24 @@ public class Visit_infoservice {
             throw new NoSuchElementException("Visit not found with id: " + id);
         }
     }
+    float distance(int id){
+        Visit_info obj= vrepo.findByTask_Id(id);
+        float dis=calculatedistance(obj.getFrom_latitude(),obj.getFrom_longitude(),obj.getTo_latitude(),obj.getTo_longitude());
+        return dis;
+    }
+    public float calculatedistance(float fromlatitude,float fromlongitude,float tolatitude,float tolongitude){
+        int earthRadius = 6371;
+
+        float dLat = (float) Math.toRadians(tolatitude - fromlatitude);
+        float dLon = (float) Math.toRadians(tolongitude - fromlongitude);
+
+        float a = (float) (Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+                Math.cos(Math.toRadians(fromlatitude)) * Math.cos(Math.toRadians(tolatitude)) *
+                        Math.sin(dLon / 2) * Math.sin(dLon / 2));
+
+        float c = 2 * (float) Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+
+        return earthRadius * c;
+    }
+
 }
