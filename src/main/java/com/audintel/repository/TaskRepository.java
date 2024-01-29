@@ -17,7 +17,7 @@ import java.util.OptionalInt;
        // List<Task> findCreated_by(int empid);
     @Query("SELECT t FROM Task t WHERE t.assigned_to = ?1")
 
-    List<Task> findByAssigned_to(@Param("empid") int empid);
+    List<Task> findByAssigned_to(@Param("empid") Integer empid);
     }
 
 

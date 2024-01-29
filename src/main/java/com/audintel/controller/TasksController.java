@@ -33,8 +33,8 @@ public class TasksController {
 
 
         @GetMapping("/distance/{empid}")
-        float fun(@PathVariable int empid ){
-
+        float fun(@PathVariable Integer empid ){
+            System.out.println(empid);
             return service.fun(empid);
         }
 }
