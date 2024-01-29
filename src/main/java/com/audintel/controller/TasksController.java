@@ -15,12 +15,18 @@ public class TasksController {
             return service.savetask(task);
         }
 
-        @GetMapping("/task/{id}")
+        @GetMapping("/gettask/{id}")
         public Task gettask(@PathVariable int id) {
             return service.gettask(id);
         }
-
-
+        @DeleteMapping("/deltask/{id}")
+        public void deletetask(@PathVariable int id){
+            service.deletetask(id);
+        }
+        @PutMapping("/updatetask/{id}")
+        public Task updatetask(@PathVariable int id,@RequestBody Task t){
+            return service.updateTask(id,t);
+        }
 
 
     }

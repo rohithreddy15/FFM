@@ -96,7 +96,6 @@ public class Dealer {
     @Id
     int id;
 
-
     @Column
     String first_name;
     @Column

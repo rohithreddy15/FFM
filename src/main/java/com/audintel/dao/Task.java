@@ -7,8 +7,7 @@ import java.util.Date;
 
 @Entity
 public class Task {
-   @OneToOne(mappedBy = "task", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-   private Visit_info visitInfo;
+
     @Id
     int id;
     @Column
@@ -25,13 +24,7 @@ public class Task {
     Date assigned_date;
     @Column
     Date completed_date;
-    public Visit_info getVisitInfo() {
-        return visitInfo;
-    }
 
-    public void setVisitInfo(Visit_info visitInfo) {
-        this.visitInfo = visitInfo;
-    }
 
     public int getId() {
         return id;

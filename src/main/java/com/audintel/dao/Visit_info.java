@@ -6,18 +6,10 @@ import jakarta.persistence.*;
 @Entity
 @Table(name="visit_info")
 public class Visit_info {
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "task_id")
-   private  Task task;
+
     @Id
     int id;
-    public Task getTask() {
-        return task;
-    }
 
-    public void setTask(Task task) {
-        this.task = task;
-    }
     public int getId() {
         return id;
     }

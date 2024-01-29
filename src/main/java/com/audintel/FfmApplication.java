@@ -30,54 +30,53 @@ public class FfmApplication {
 }
 
 
-@RestController
-@RequestMapping("/")
-class DistanceController {
-
- TaskRepository taskRepository;
-	 Visit_inforepository visitInfoRepository;
-
-	@Autowired
-	public DistanceController(TaskRepository taskRepository, Visit_inforepository visitInfoRepository) {
-		this.taskRepository = taskRepository;
-		this.visitInfoRepository = visitInfoRepository;
-	}
-
-	@GetMapping("/distance/{employeeId}")
-	public float calculateDistanceForEmployee(@PathVariable int employeeId) {
-		List<Task> tasks = taskRepository.findByEmployeeId( employeeId);
-		float totalDistance = 0;
-
-		for (Task task : tasks) {
-			List<Visit_info> visitInfos = visitInfoRepository.findByTaskId(task.getId());
-
-			for (int i = 0; i < visitInfos.size() - 1; i++) {
-				Visit_info visitInfo = visitInfos.get(i);
-				totalDistance +=calculatedistance(visitInfo.getFrom_latitude(),visitInfo.getFrom_longitude(),visitInfo.getTo_latitude(),visitInfo.getTo_longitude());
-
-
-
-			}
-		}
-
-
-		return totalDistance;
-	}
-
-		public float calculatedistance(float fromlatitude,float fromlongitude,float tolatitude,float tolongitude){
-			int earthRadius = 6371;
-
-			float dLat = (float) Math.toRadians(tolatitude - fromlatitude);
-			float dLon = (float) Math.toRadians(tolongitude - fromlongitude);
-
-			float a = (float) (Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-					Math.cos(Math.toRadians(fromlatitude)) * Math.cos(Math.toRadians(tolatitude)) *
-							Math.sin(dLon / 2) * Math.sin(dLon / 2));
-
-			float c = 2 * (float) Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-
-			return earthRadius * c;
-		}
-}
+//@RestController
+//@RequestMapping("/")
+//class DistanceController {
+//	@Autowired
+//    TaskRepository taskRepository;
+//	Visit_inforepository visitInfoRepository;
+//
+//	public DistanceController(TaskRepository taskRepository, Visit_inforepository visitInfoRepository) {
+//		this.taskRepository = taskRepository;
+//		this.visitInfoRepository = visitInfoRepository;
+//	}
+//
+//	@GetMapping("/distance/{employeeId}")
+//	public float calculateDistanceForEmployee(@PathVariable int employeeId) {
+//		List<Task> tasks = taskRepository.findByEmployeeId( employeeId);
+//		float totalDistance = 0;
+//
+//		for (Task task : tasks) {
+//			List<Visit_info> visitInfos = visitInfoRepository.findByTaskId(task.getId());
+//
+//			for (int i = 0; i < visitInfos.size() - 1; i++) {
+//				Visit_info visitInfo = visitInfos.get(i);
+//				totalDistance +=calculatedistance(visitInfo.getFrom_latitude(),visitInfo.getFrom_longitude(),visitInfo.getTo_latitude(),visitInfo.getTo_longitude());
+//
+//
+//
+//			}
+//		}
+//
+//
+//		return totalDistance;
+//	}
+//
+//		public float calculatedistance(float fromlatitude,float fromlongitude,float tolatitude,float tolongitude){
+//			int earthRadius = 6371;
+//
+//			float dLat = (float) Math.toRadians(tolatitude - fromlatitude);
+//			float dLon = (float) Math.toRadians(tolongitude - fromlongitude);
+//
+//			float a = (float) (Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+//					Math.cos(Math.toRadians(fromlatitude)) * Math.cos(Math.toRadians(tolatitude)) *
+//							Math.sin(dLon / 2) * Math.sin(dLon / 2));
+//
+//			float c = 2 * (float) Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+//
+//			return earthRadius * c;
+//		}
+//}
 
 

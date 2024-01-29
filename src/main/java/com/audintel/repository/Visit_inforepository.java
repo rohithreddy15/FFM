@@ -9,6 +9,6 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface Visit_inforepository extends JpaRepository<Visit_info,Integer> {
-    @Query("SELECT v FROM Visit_Info v WHERE v.task_id = taskId ")
-    List<Visit_info> findByTaskId(@Param("taskId") int taskId);
+//    @Query("SELECT v FROM Visit_Info v WHERE v.task_id = taskId ")
+//    List<Visit_info> findByTaskId(@Param("taskId") int taskId);
 }

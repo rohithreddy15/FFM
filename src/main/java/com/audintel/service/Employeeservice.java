@@ -53,5 +53,9 @@ public class Employeeservice {
         } else {
             throw new NoSuchElementException("Employee not found with id: " + empcode);
         }
+
+    }
+    public Employee getemployeeLoginid(String loginid) {
+        return emprepo.findByLoginid(loginid);
     }
 }

@@ -12,9 +12,9 @@ import java.util.List;
 
 @Repository
     public interface TaskRepository extends JpaRepository<Task,Integer> {
-        List<Task> findCreated_by(int empid);
-    @Query("SELECT t FROM Task t WHERE t.assigned_to = employeeId")
-    List<Task> findByEmployeeId(@Param("employeeId") int employeeId);
+      //  List<Task> findCreated_by(int empid);
+//    @Query("SELECT t FROM Task t WHERE t.assigned_to = employeeId")
+//    List<Task> findByEmployeeId(@Param("employeeId") int employeeId);
     }
 
 

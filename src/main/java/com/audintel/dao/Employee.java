@@ -72,8 +72,8 @@ public void setMgrid(int mgrid){this.mgrid=mgrid;}
   return loginid;
  }
 
- public void setLoginid(String loginid) {
-  this.loginid = loginid;
+ public void setLoginid(String login_id) {
+  this.loginid = login_id;
  }
 
  public String getPassword() {
