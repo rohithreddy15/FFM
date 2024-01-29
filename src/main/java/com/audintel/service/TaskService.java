@@ -44,6 +44,9 @@ public class TaskService {
         return b.orElse(null);
     }
 
+    public void deletetask(int id){
+        repo.deleteById(id);
+    }
 
 
    public float fun(int empid){

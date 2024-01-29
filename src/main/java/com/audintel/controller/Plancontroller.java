@@ -4,6 +4,10 @@ import com.audintel.dao.Plan;
 import com.audintel.service.Planservice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.List;
+
 @RestController
 @CrossOrigin(origins = "http://localhost:3000/")
 public class Plancontroller {
@@ -24,5 +28,14 @@ public class Plancontroller {
     @PutMapping("/updateplan/{id}")
     public Plan updateplan(@PathVariable int id,@RequestBody Plan p){
         return service.updateplan(id,p);
+    }
+    @GetMapping("/allplans")
+    public List<Integer> getallplans(){
+        List<Plan> al=service.getallplans();
+        List<Integer>as=new ArrayList<>();
+        for(Plan a:al){
+            as.add(a.getId());
+        }
+        return as;
     }
 }
