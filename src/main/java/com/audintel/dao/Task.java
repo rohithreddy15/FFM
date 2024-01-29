@@ -12,7 +12,7 @@ public class Task {
     @Id
     int id;
     @Column
-    int created_by;
+    int createdby;
     @Column
     int assigned_to;
     @Column
@@ -35,12 +35,12 @@ public class Task {
         this.id = id;
     }
 
-    public int getCreated_by() {
-        return created_by;
+    public int getCreatedby() {
+        return createdby;
     }
 
-    public void setCreated_by(int created_by) {
-        this.created_by = created_by;
+    public void setCreatedby(int created_by) {
+        this.createdby = createdby;
     }
 
     public int getAssigned_to() {

@@ -27,7 +27,7 @@ public class TaskService {
         if(b1.isPresent()){
             task=b1.get();
             task.setAssigned_to(newObj.getAssigned_to());
-            task.setCreated_by(newObj.getCreated_by());
+            task.setCreatedby(newObj.getCreatedby());
             task.setDealerid(newObj.getDealerid());
             task.setDescription(newObj.getDescription());
             task.setStatus(newObj.getStatus());
@@ -44,13 +44,18 @@ public class TaskService {
         return b.orElse(null);
     }
 
+    public void deletetask(int id){
+        repo.deleteById(id);
+    }
 
-
-   public float fun(int empid){
+   public float fun(Integer empid){
+       System.out.println("enter fun111111111111111111111111");
       List<Task> ob=repo.findByAssigned_to(empid);
        // Task ob=repo.findByAssigned_to(empid);
+       System.out.println("ob object    ..........................."+ ob );
       float ans=0;
       for(Task t:ob){
+          System.out.println("entered for 5555768222222222222222222222222211111111");
           ans+=service.distance(t.getId());
       }
 
