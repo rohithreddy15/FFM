@@ -27,7 +27,7 @@ public class Visit_infoservice {
         Optional<Visit_info> b=vrepo.findById(id);
         if(b.isPresent()){
             Visit_info oldvisit=b.get();
-            oldvisit.setId(updatedvisit.getId());
+            oldvisit.setTaskId((updatedvisit.getTaskId()));
             oldvisit.setFrom_latitude(updatedvisit.getFrom_latitude());
             oldvisit.setFrom_longitude(updatedvisit.getFrom_longitude());
             oldvisit.setDistancetravelled(updatedvisit.getDistancetravelled());

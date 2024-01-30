@@ -1,8 +1,6 @@
 package com.audintel.dao;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class Dealer {
@@ -86,6 +84,7 @@ public class Dealer {
     public void setStateid(int stateid) {
         this.stateid = stateid;
     }
+
     public int getId() {
         return id;
     }
@@ -93,7 +92,9 @@ public class Dealer {
     public void setId(int id) {
         this.id = id;
     }
+
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     int id;
 
     @Column

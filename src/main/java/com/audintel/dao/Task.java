@@ -9,7 +9,16 @@ import java.util.Date;
 public class Task {
 
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     int id;
     @Column
     int createdby;
@@ -27,13 +36,7 @@ public class Task {
     Date completed_date;
 
 
-    public int getId() {
-        return id;
-    }
 
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public int getCreatedby() {
         return createdby;

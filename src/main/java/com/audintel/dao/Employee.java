@@ -7,13 +7,7 @@ import java.util.Date;
 
 @Entity
 public class Employee {
- public int getEmpcode() {
-  return empcode;
- }
 
- public void setEmpcode(int empcode) {
-  this.empcode = empcode;
- }
 
  public String getFirst_name() {
   return first_name;
@@ -188,8 +182,18 @@ public void setMgrid(int mgrid){this.mgrid=mgrid;}
   this.isactive = isactive;
  }
 
+ public int getEmpcode() {
+  return empcode;
+ }
+
+ public void setEmpcode(int empcode) {
+  this.empcode = empcode;
+ }
+
+
+
  @Id
- //@GeneratedValue(strategy = GenerationType.IDENTITY)
+ @GeneratedValue(strategy = GenerationType.AUTO)
  int empcode;
 @Column
 String first_name;

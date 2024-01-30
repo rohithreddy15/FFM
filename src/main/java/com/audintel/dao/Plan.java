@@ -1,17 +1,28 @@
 package com.audintel.dao;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.util.Date;
 
 @Entity
 public class Plan {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     int id;
     @Column
     Boolean status;
+
+
+
+    @Column
+    int empid;
+    public int getEmpid() {
+        return empid;
+    }
+
+    public void setEmpid(int empid) {
+        this.empid = empid;
+    }
 
     public int getId() {
         return id;

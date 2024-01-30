@@ -33,6 +33,7 @@ public class Planservice {
             oldplan.setCreated_by(updatedplan.getCreated_by());
             oldplan.setCompleted_date(updatedplan.getCompleted_date());
             oldplan.setDistance(updatedplan.getDistance());
+            oldplan.setEmpid(updatedplan.getEmpid());
             return prepo.save(oldplan);
         }
         else{

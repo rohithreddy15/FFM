@@ -8,8 +8,18 @@ import jakarta.persistence.*;
 public class Visit_info {
 
     @Column(name = "taskid")
-   private  int taskid;
+    int taskid;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     int id;
     public int getTaskId() {
         return taskid;
@@ -18,13 +28,7 @@ public class Visit_info {
     public void setTaskId(int taskid) {
         this.taskid = taskid;
     }
-    public int getId() {
-        return id;
-    }
 
-    public void setId(int id) {
-        this.id = id;
-    }
 
 
 
