@@ -1,4 +1,5 @@
 package com.audintel.controller;
+import com.audintel.dao.Plan;
 import com.audintel.dao.Task;
 import com.audintel.service.TaskService;
 
@@ -30,6 +31,14 @@ public class TasksController {
         public Task updatetask(@PathVariable int id,@RequestBody Task t){
             return service.updateTask(id,t);
         }
+    @GetMapping("/alltasks")
+    public List<Task> getalltasks(){
+        return service.getalltasks();
+    }
+    @GetMapping("/yourtasks/{emid}")
+    public List<Task> getUrTasks(@PathVariable Integer emid){
+        return service.getUrTasks(emid);
+    }
 
 
         @GetMapping("/distance/{empid}")

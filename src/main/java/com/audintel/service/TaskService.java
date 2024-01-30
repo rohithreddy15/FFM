@@ -47,6 +47,14 @@ public class TaskService {
     public void deletetask(int id){
         repo.deleteById(id);
     }
+    public List<Task> getalltasks(){
+        return (List<Task>) repo.findAll();
+    }
+    public List<Task> getUrTasks(Integer emid){
+
+
+         return  repo.findByAssigned_to(emid);
+    }
 
    public float fun(Integer empid){
        System.out.println("enter fun111111111111111111111111");
