@@ -10,7 +10,7 @@ public class Plan {
     @GeneratedValue(strategy = GenerationType.AUTO)
     int id;
     @Column
-    Boolean status;
+    String status;
 
 
 
@@ -32,11 +32,11 @@ public class Plan {
         this.id = id;
     }
 
-    public Boolean getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(Boolean status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 

@@ -51,24 +51,18 @@ public class TaskService {
         return (List<Task>) repo.findAll();
     }
     public List<Task> getUrTasks(Integer emid){
-
-
-         return  repo.findByAssigned_to(emid);
+        return  repo.findByAssigned_to(emid);
     }
 
    public float fun(Integer empid){
-       System.out.println("enter fun111111111111111111111111");
+
       List<Task> ob=repo.findByAssigned_to(empid);
-       // Task ob=repo.findByAssigned_to(empid);
-       System.out.println("ob object    ..........................."+ ob );
       float ans=0;
       for(Task t:ob){
-          System.out.println("entered for 5555768222222222222222222222222211111111");
+
           ans+=service.distance(t.getId());
       }
-
-       System.out.println("entered");
-return ans;
+      return ans;
 
     }
 
